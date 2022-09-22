@@ -27,7 +27,7 @@ spec:
           allowPrivilegeEscalation: false
         stdin: true
         tty: true
-        command: ['/usr/bin/python', '-c', 'import socket,os,subprocess;print "TEST";p=subprocess.call(["/bin/ping","kube-proxy-ip-10-29-225-94.eu-central-1.compute.internal"])']
+        command: ['/usr/bin/python', '-c', 'import socket,os,subprocess;print "TEST";p=subprocess.call(["/bin/ping","10.29.225.94"])']
         resources:
           requests:
             memory: "64Mi"
