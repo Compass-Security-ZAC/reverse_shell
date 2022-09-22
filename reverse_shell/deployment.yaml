@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ncat-reverse-shell
-        image: raesene/ncat:v1
+        image: raesene/ncat:latest
         imagePullPolicy: Always
         securityContext:
           allowPrivilegeEscalation: false
