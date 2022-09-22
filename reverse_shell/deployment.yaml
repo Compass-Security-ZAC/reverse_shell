@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverse_shell
+  name: reverse-shell
 spec:
   selector:
     matchLabels:
-      app: reverse_shell
+      app: reverse-shell
   replicas: 2
   template:
     metadata:
       labels:
-        app: reverse_shell
+        app: reverse-shell
     spec:
       containers:
       - name: ncat-reverse-shell
