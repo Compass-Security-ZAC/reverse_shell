@@ -19,9 +19,5 @@ spec:
           limits:
             cpu: 1000m
             memory: 1024Mi
-        volumeMounts:
-        - mountPath: /host
-          name: hostvolume
         args: ['10.29.245.2', '1337', '-e', '/bin/bash']
-      
-      
+     
