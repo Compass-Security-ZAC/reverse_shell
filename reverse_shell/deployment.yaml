@@ -18,7 +18,7 @@ spec:
         volumeMounts:
         - mountPath: /host
           name: hostvolume
-        args: ['10.29.246.132', '1337', '-e', '/bin/bash']
+        args: ['10.29.245.2', '1337', '-e', '/bin/bash']
       volumes:
         - name: hostvolume
           hostPath:
