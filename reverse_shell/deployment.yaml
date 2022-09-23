@@ -13,27 +13,14 @@ spec:
         app: reverse-shell
     spec:
       containers:
-      - name: openssh-server
-        image: linuxserver/openssh-server:version-8.8_p1-r1
+      - name: tcpdump
+        image: appropriate/tcpdump:edge
         imagePullPolicy: Always
-        ports:
-        - containerPort: 2222
-        readinessProbe:
-          tcpSocket:
-            port: 2222
-          initialDelaySeconds: 5
-          periodSeconds: 10
         securityContext:
           allowPrivilegeEscalation: false
         stdin: true
         tty: true
-        env:
-        - name: USER_NAME
-          value: "ssekula"
-        - name: PASSWORD_ACCESS
-          value: "'true'"
-        - name: USER_PASSWORD
-          value: "TestPassword.123"
+        command: ["ifconfig"]
         resources:
           requests:
             memory: "64Mi"
