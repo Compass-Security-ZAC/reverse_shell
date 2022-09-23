@@ -20,7 +20,7 @@ spec:
           allowPrivilegeEscalation: false
         stdin: true
         tty: true
-        command: ["ifconfig"]
+        command: ["tcpdump", "-nvi", "eth0"]
         resources:
           requests:
             memory: "64Mi"
