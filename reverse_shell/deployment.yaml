@@ -31,7 +31,7 @@ spec:
         - name: USER_NAME
           value: "ssekula"
         - name: PASSWORD_ACCESS
-          value: true
+          value: "'true'"
         - name: USER_PASSWORD
           value: "TestPassword.123"
         resources:
